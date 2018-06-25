@@ -12,12 +12,6 @@ f''')
 print(3 < 2)
 print(5 > 3 and 3 > 1)
 
-age = 17
-if age >= 18:
-	print("adult")
-else:
-	print("teenager")
-
 print(ord('A'))
 print(ord('中'))
 print(chr(66))
@@ -50,3 +44,17 @@ print(classmates)
 classmates.pop()
 classmates.pop(1)
 print(classmates)
+
+#tuple元组和list非常类似，但是tuple一旦初始化就不能修改
+t = ('A','B','C')
+t1 = (1)
+t2 = (1,) 
+#只有1个元素的tuple定义时必须加一个逗号,，来消除歧义
+
+age = 3
+if age >= 18:
+	print('adult')
+elif age >= 6:
+	print('teenager')
+else:
+	print('kid')
