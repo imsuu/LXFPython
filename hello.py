@@ -58,3 +58,11 @@ elif age >= 6:
 	print('teenager')
 else:
 	print('kid')
+
+L = ['A','B','C','D','E','F','G']
+print(L[:3])
+print(L[1:4])
+print(L[-2:])
+#倒数第一个元素的索引是-1
+print(L[-2:-1])
+print(L[::2])
