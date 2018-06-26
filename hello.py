@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import os
 
 print(100 + 200 + 300)
 print(0xff00)
@@ -66,3 +67,59 @@ print(L[-2:])
 #倒数第一个元素的索引是-1
 print(L[-2:-1])
 print(L[::2])
+
+def trim(s):
+    if (s[:1] == ' '):
+        return trim(s[1:])
+    elif (s[-1:] == ' '):
+        return trim(s[:-1])
+    else:
+        return s
+
+def findMinAndMax(Li):
+	if len(Li) == 0:
+		return (None, None)
+	max = min = Li[0]
+	for i in Li:
+		if i <= min:
+			min = i
+		if i >= max:
+			max = i 
+	return (min,max)
+		
+if findMinAndMax([]) != (None, None):
+    print('测试失败!1')
+elif findMinAndMax([7]) != (7, 7):
+    print('测试失败!2')
+elif findMinAndMax([7, 1]) != (1, 7):
+    print('测试失败!3')
+elif findMinAndMax([7, 1, 3, 9, 5]) != (1, 9):
+    print('测试失败!4')
+else:
+    print('测试成功!')
+
+print([x*x for x in range(1,11)])
+print([m+n for m in 'ABC' for n in 'XYZ'])
+
+# print(d for d in os.listdir('.'))
+Llower = ['Hello', 'World', 18, 'Apple', None]
+L2 = [s.lower() for s in Llower if isinstance(s,str)]
+print(L2)
+if L2 == ['hello', 'world', 'apple']:
+    print('测试通过!')
+else:
+    print('测试失败!')
+
+print('生成器')
+g = (x * x for x in range(10))
+for n in g:
+	print(n)
+
+#斐波那契数列
+def fib(max):
+    n, a, b = 0, 0, 1
+    while n < max:
+        print(b)
+        a, b = b, a + b
+        n = n + 1
+    return 'done'
