@@ -1,3 +1,5 @@
+import functools
+
 def lazy_sum(*args):
 	def sum():
 		ax = 0
@@ -45,3 +47,9 @@ print(f6())
 
 def build(x,y):
 	return lambda: x*x+y*y
+int2 = functools.partial(int, base=2)
+print(int2('1000000'))
+print(int2('1000000',base=10))
+
+max2 = functools.partial(max, 10)
+print(max2(5,7,8))
